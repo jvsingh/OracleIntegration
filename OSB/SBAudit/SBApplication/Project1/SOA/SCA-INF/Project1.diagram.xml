@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gReference name="dbOSBAudit">
+        <dgm:body borderWidth="2" arcRad="20" X="586" Y="26" width="136" height="108">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="576" Y="19" width="156" height="122">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="dbOSBAudit" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SBApplication/Project1/dbOSBAudit#wsdl.interface(dbOSBAudit_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>merge</dgm:item>
+            <dgm:item>insert</dgm:item>
+            <dgm:item>dbOSBAuditSelect</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+</dgm:gDiagram>

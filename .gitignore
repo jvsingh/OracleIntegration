@@ -1,0 +1,11 @@
+SOAApplication/**/*classes*
+SOAApplication/.data
+SOAApplication/SOAComposite/.data
+SOAApplication/SOAComposite/SOA/SCA-INF/bpel
+SOAApplication/SOAComposite/SOA/SCA-INF/*diagram*
+**/*test-output
+**/.data
+**/classes
+**/target
+**/~
+OSB/Samples/SBApplication/Project1/**

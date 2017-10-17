@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                    http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd                   http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd                   http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+    <testcase name="SOACompositeTest_IT">
+        <description>Basic send message example</description>
+        <actions>
+            <send endpoint="SOACompositeEndpoint">
+                <message>
+                    <payload>
+                        <bpel:process xmlns:bpel="http://samples.singhpora.com/citrus/SOAApplication/SOAComposite/BPELProcess1">
+                            <bpel:inputField1>TextContent1</bpel:inputField1>
+                            <bpel:inputField2>TextContent2</bpel:inputField2>
+                        </bpel:process>
+                    </payload>
+                  
+                </message>
+                 <header>
+                        <element name="citrus_soap_action" value="process"/>
+                    </header>
+            </send>
+            <receive endpoint="SOACompositeEndpoint">
+                <message>
+                    <data>
+                        <![CDATA[
+                             <processResponse xmlns="http://samples.singhpora.com/citrus/SOAApplication/SOAComposite/BPELProcess1">
+                                    <result>success</result>
+                            </processResponse>
+            
+                        ]]>
+                    </data>
+                </message>
+            </receive>
+        </actions>
+    </testcase>
+</spring:beans>

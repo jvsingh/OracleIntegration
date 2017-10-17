@@ -1,0 +1,86 @@
+<root>
+<msg time='2017-10-10T20:32:40.206+01:00' comp_id='AdminServer' type='TRACE' level='1' host_id='jv-singhpora' host_addr='192.168.0.31' module='oracle.osb.debug.transports' tid='69' user='&lt;anonymous>' ecid='a846b5be-7a4a-41b9-822f-48aaaf0120cd-00000009' rid='0:74'>
+ <attr name='APP' value='Service Bus File Transport Provider'/>
+ <attr name='partition-name' value='DOMAIN'/>
+ <attr name='tenant-name' value='GLOBAL'/>
+ <attr name='FlowId' value='0000Lw7lVQ3Fw0WFLz2VOA1PrHZW000007'/>
+ <txt>Sending outbound one way invocation to JCA framework against JCA resource: SBAuditLogger/Adapters/dbOSBAudit_db, operation: insert, SOAP message: 
+
+######################################################
+SOAP Message: 
+######################################################
+
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">&lt;soapenv:Body>&lt;tns:FlowtraceAuditCollection xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbOSBAudit">&lt;tns:FlowtraceAudit>&lt;tns:AuditID>2017-10-10T20:32:40.141+01:00&lt;/tns:AuditID>&lt;tns:MessageDateTime>2017-10-10T20:32:40.142+01:00&lt;/tns:MessageDateTime>&lt;tns:MessagePayload>&lt;txt>deleting log file: AdminServer-flowtrace-5.xml, size: 923 bytes&lt;/txt>&lt;/tns:MessagePayload>&lt;tns:ComponentName>TEST&lt;/tns:ComponentName>&lt;tns:ServiceVersion>1.1.0.0&lt;/tns:ServiceVersion>&lt;/tns:FlowtraceAudit>&lt;tns:FlowtraceAudit>&lt;tns:AuditID>2017-10-10T20:32:40.144+01:00&lt;/tns:AuditID>&lt;tns:MessageDateTime>2017-10-10T20:32:40.145+01:00&lt;/tns:MessageDateTime>&lt;tns:MessagePayload>&lt;txt> [RouteNode1, null, null, REQUEST] FLOWTRACE_ENTRY:: &lt;FlowTraceItem>
+  &lt;ServiceVersion/>
+  &lt;Context/>
+  &lt;Data>
+    &lt;Body xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+      &lt;Message xmlns="">
+        &lt;Header>
+          &lt;MessageNumber>1001&lt;/MessageNumber>
+          &lt;MessageDateTime>20170917102101&lt;/MessageDateTime>
+          &lt;Sender>TEST&lt;/Sender>
+        &lt;/Header>
+        &lt;Body>
+          &lt;input>Hello World&lt;/input>
+        &lt;/Body>
+      &lt;/Message>
+    &lt;/Body>
+  &lt;/Data>
+&lt;/FlowTraceItem>&lt;/txt>&lt;/tns:MessagePayload>&lt;tns:ComponentName>TEST&lt;/tns:ComponentName>&lt;tns:ServiceVersion>1.1.0.0&lt;/tns:ServiceVersion>&lt;/tns:FlowtraceAudit>&lt;tns:FlowtraceAudit>&lt;tns:AuditID>2017-10-10T20:32:40.149+01:00&lt;/tns:AuditID>&lt;tns:MessageDateTime>2017-10-10T20:32:40.149+01:00&lt;/tns:MessageDateTime>&lt;tns:MessagePayload>&lt;txt> [RouteNode1, null, null, REQUEST] FLOWTRACE_ENTRY:: &lt;FlowTraceItem>
+  &lt;ServiceVersion/>
+  &lt;Context/>
+  &lt;Data>
+    &lt;Body xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+      &lt;Message xmlns="">
+        &lt;Header>
+          &lt;MessageNumber>1001&lt;/MessageNumber>
+          &lt;MessageDateTime>2017-09-17T00:00:01&lt;/MessageDateTime>
+          &lt;Sender>TEST&lt;/Sender>
+        &lt;/Header>
+        &lt;Body>
+          &lt;input>Hello World&lt;/input>
+        &lt;/Body>
+      &lt;/Message>
+    &lt;/Body>
+  &lt;/Data>
+&lt;/FlowTraceItem>&lt;/txt>&lt;/tns:MessagePayload>&lt;tns:ComponentName>TEST&lt;/tns:ComponentName>&lt;tns:ServiceVersion>1.1.0.0&lt;/tns:ServiceVersion>&lt;/tns:FlowtraceAudit>&lt;tns:FlowtraceAudit>&lt;tns:AuditID>2017-10-10T20:32:40.151+01:00&lt;/tns:AuditID>&lt;tns:MessageDateTime>2017-10-10T20:32:40.151+01:00&lt;/tns:MessageDateTime>&lt;tns:MessagePayload>&lt;txt> [RouteNode1, null, null, REQUEST] FLOWTRACE_ENTRY:: &lt;FlowTraceItem>
+  &lt;ServiceVersion/>
+  &lt;Context/>
+  &lt;Data>
+    &lt;Body xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+      &lt;Message xmlns="">
+        &lt;Header>
+          &lt;MessageNumber>1002&lt;/MessageNumber>
+          &lt;MessageDateTime>20170917000002&lt;/MessageDateTime>
+          &lt;Sender>TEST&lt;/Sender>
+        &lt;/Header>
+        &lt;Body>
+          &lt;input>Hello World&lt;/input>
+        &lt;/Body>
+      &lt;/Message>
+    &lt;/Body>
+  &lt;/Data>
+&lt;/FlowTraceItem>&lt;/txt>&lt;/tns:MessagePayload>&lt;tns:ComponentName>TEST&lt;/tns:ComponentName>&lt;tns:ServiceVersion>1.1.0.0&lt;/tns:ServiceVersion>&lt;/tns:FlowtraceAudit>&lt;tns:FlowtraceAudit>&lt;tns:AuditID>2017-10-10T20:32:40.153+01:00&lt;/tns:AuditID>&lt;tns:MessageDateTime>2017-10-10T20:32:40.153+01:00&lt;/tns:MessageDateTime>&lt;tns:MessagePayload>&lt;txt> [RouteNode1, null, null, RESPONSE] RESPONSE FLOWTRACE_ENTRY:: &lt;FlowTraceItem>
+  &lt;ServiceVersion>1.1.1&lt;/ServiceVersion>
+  &lt;Data>
+    &lt;Body xmlns="http://schemas.xmlsoap.org/soap/envelope/"/>
+  &lt;/Data>
+&lt;/FlowTraceItem>&lt;/txt>&lt;/tns:MessagePayload>&lt;tns:ComponentName>TEST&lt;/tns:ComponentName>&lt;tns:ServiceVersion>1.1.0.0&lt;/tns:ServiceVersion>&lt;/tns:FlowtraceAudit>&lt;tns:FlowtraceAudit>&lt;tns:AuditID>2017-10-10T20:32:40.159+01:00&lt;/tns:AuditID>&lt;tns:MessageDateTime>2017-10-10T20:32:40.159+01:00&lt;/tns:MessageDateTime>&lt;tns:MessagePayload>&lt;txt> [RouteNode1, null, null, RESPONSE] RESPONSE FLOWTRACE_ENTRY:: &lt;FlowTraceItem>
+  &lt;ServiceVersion>1.1.1&lt;/ServiceVersion>
+  &lt;Data>
+    &lt;Body xmlns="http://schemas.xmlsoap.org/soap/envelope/"/>
+  &lt;/Data>
+&lt;/FlowTraceItem>&lt;/txt>&lt;/tns:MessagePayload>&lt;tns:ComponentName>TEST&lt;/tns:ComponentName>&lt;tns:ServiceVersion>1.1.0.0&lt;/tns:ServiceVersion>&lt;/tns:FlowtraceAudit>&lt;tns:FlowtraceAudit>&lt;tns:AuditID>2017-10-10T20:32:40.161+01:00&lt;/tns:AuditID>&lt;tns:MessageDateTime>2017-10-10T20:32:40.165+01:00&lt;/tns:MessageDateTime>&lt;tns:MessagePayload>&lt;txt> [RouteNode1, null, null, RESPONSE] RESPONSE FLOWTRACE_ENTRY:: &lt;FlowTraceItem>
+  &lt;ServiceVersion>1.1.1&lt;/ServiceVersion>
+  &lt;Data>
+    &lt;Body xmlns="http://schemas.xmlsoap.org/soap/envelope/"/>
+  &lt;/Data>
+&lt;/FlowTraceItem>&lt;/txt>&lt;/tns:MessagePayload>&lt;tns:ComponentName>TEST&lt;/tns:ComponentName>&lt;tns:ServiceVersion>1.1.0.0&lt;/tns:ServiceVersion>&lt;/tns:FlowtraceAudit>&lt;/tns:FlowtraceAuditCollection>&lt;/soapenv:Body>&lt;/soapenv:Envelope>
+
+######################################################
+
+</txt>
+</msg>
+</root>

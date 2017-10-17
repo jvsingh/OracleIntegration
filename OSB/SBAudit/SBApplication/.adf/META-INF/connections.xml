@@ -1,0 +1,70 @@
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+  <Reference name="sblog" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="sblog" xmlns="">
+    <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+    <RefAddresses>
+      <StringRefAddr addrType="hostname">
+        <Contents>sbdb.czz5taax8rqa.us-east-1.rds.amazonaws.com</Contents>
+      </StringRefAddr>
+      <SecureRefAddr addrType="password"/>
+      <StringRefAddr addrType="driver">
+        <Contents>weblogic.jdbc.sqlserver.SQLServerDriver</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="subtype">
+        <Contents>SQLServer</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="port">
+        <Contents>9433</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>sblog</Contents>
+      </StringRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="SBFlowDB" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="SBFlowDB"
+             xmlns="">
+    <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+    <RefAddresses>
+      <StringRefAddr addrType="hostname">
+        <Contents>sbdb.czz5taax8rqa.us-east-1.rds.amazonaws.com</Contents>
+      </StringRefAddr>
+      <SecureRefAddr addrType="password"/>
+      <StringRefAddr addrType="driver">
+        <Contents>weblogic.jdbc.sqlserver.SQLServerDriver</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="subtype">
+        <Contents>SQLServer</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="port">
+        <Contents>9433</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>weblogic</Contents>
+      </StringRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="sblogDB" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="sblogDB"
+             xmlns="">
+    <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+    <RefAddresses>
+      <StringRefAddr addrType="hostname">
+        <Contents>sbdb.czz5taax8rqa.us-east-1.rds.amazonaws.com</Contents>
+      </StringRefAddr>
+      <SecureRefAddr addrType="password"/>
+      <StringRefAddr addrType="driver">
+        <Contents>weblogic.jdbc.sqlserver.SQLServerDriver</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="subtype">
+        <Contents>SQLServer</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="port">
+        <Contents>9433</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>sblog</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="dataSourceName">
+        <Contents>sblog</Contents>
+      </StringRefAddr>
+    </RefAddresses>
+  </Reference>
+</References>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc>/ns:composite/ns:reference[@name='dbOSBAudit']</loc>
+      <line>18</line>
+      <col>72</col>
+      <file>B:\Workspace\GitHub\SOATestingWithCitrus\OSB\Samples\SBApplication\Project1\SOA\composite.xml</file>
+      <name>B:\Workspace\GitHub\SOATestingWithCitrus\OSB\Samples\SBApplication\Project1\SOA\composite.xml</name>
+      <fix/>
+      <msg>Reference dbOSBAudit does not exist as wire target</msg>
+   </Fault>
+</Faults>

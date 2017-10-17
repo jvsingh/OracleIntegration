@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbOSBAudit" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbOSBAudit" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="FlowtraceAuditCollection" type="FlowtraceAuditCollection"/>
+   <xs:complexType name="FlowtraceAuditCollection">
+      <xs:sequence>
+         <xs:element name="FlowtraceAudit" type="FlowtraceAudit" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="FlowtraceAudit">
+      <xs:sequence>
+         <xs:element name="Message_type" type="string16" nillable="true"/>
+         <xs:element name="AuditID" type="string1" nillable="true"/>
+         <xs:element name="MessageReference" type="string64" nillable="true"/>
+         <!--xs:element name="AuditDateTime" type="xs:int" nillable="true"/ -->
+         <xs:element name="MessageDateTime" type="string1" nillable="true"/>
+         <xs:element name="MessagePayload" type="xs:anyType" nillable="true"/>
+         <xs:element name="ComponentName" type="string64" nillable="true"/>
+         <xs:element name="ServiceVersion" type="string16" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbOSBAuditSelectInputParameters" type="dbOSBAuditSelect"/>
+   <xs:complexType name="dbOSBAuditSelect">
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:simpleType name="string16">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="16"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string1">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string64">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="64"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

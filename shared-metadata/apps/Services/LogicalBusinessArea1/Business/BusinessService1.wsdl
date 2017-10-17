@@ -1,0 +1,27 @@
+<wsdl:definitions name="BusinessService1" 
+ targetNamespace="http://www.singhpora.com/Services/LogicalBusinessArea1/Business/BusinessService1" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:client="http://www.singhpora.com/Services/LogicalBusinessArea1/Business/BusinessService1" 
+ xmlns:msg="http://www.singhpora.com/Schemas/Messages/LogicalBusinessArea1/Business/BusinessService1Message" 
+ xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://www.singhpora.com/Schemas/Messages/LogicalBusinessArea1/Business/BusinessService1Message" 
+             schemaLocation="../../../Schemas/Messages/LogicalBusinessArea1/Business/BusinessService1Message.xsd"/>
+  </schema>
+ </wsdl:types>
+ <wsdl:message name="doSomethingReqMessage">
+  <wsdl:part name="payload" element="msg:doSomethingRequest"/>
+ </wsdl:message>
+ <wsdl:message name="doSomethingRespMessage">
+  <wsdl:part name="payload" element="msg:doSomethingResponse"/>
+ </wsdl:message>
+ 
+ <wsdl:portType name="BusinessService1">
+  <wsdl:operation name="doSomething">
+   <wsdl:input message="client:doSomethingReqMessage"/>
+   <wsdl:output message="client:doSomethingRespMessage"/>
+  </wsdl:operation>
+  
+ </wsdl:portType>
+</wsdl:definitions>

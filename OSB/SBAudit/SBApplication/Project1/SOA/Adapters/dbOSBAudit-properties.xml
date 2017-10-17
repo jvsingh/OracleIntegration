@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessageReference:db_column_size">64</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessagePayload:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.Message_type:db_column_size">16</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessageDateTime:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.AuditID:db_column_type">VARCHAR</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.ComponentName:db_column_type">VARCHAR</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.AuditDateTime:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.ComponentName:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessagePayload:db_column_type">XML</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.ServiceVersion:db_column_size">16</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.AuditID:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_table_type">TABLE</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessageDateTime:db_column_type">VARCHAR</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.AuditID:db_column_size">1</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessageReference:db_column_type">VARCHAR</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.ComponentName:db_column_size">64</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessageReference:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.Message_type:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_7">ServiceVersion</entry>
+   <entry key="root_descriptor_alias">dbo.FLOWTRACE_AUDIT</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_6">ComponentName</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.Message_type:db_column_type">VARCHAR</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_5">MessagePayload</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_4">MessageDateTime</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_3">AuditDateTime</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.AuditDateTime:db_column_type">TIMESTAMP</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_2">MessageReference</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.MessageDateTime:db_column_size">1</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_1">AuditID</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT:db_column_0">Message_type</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.ServiceVersion:db_column_not_null">false</entry>
+   <entry key="dbo.FLOWTRACE_AUDIT.ServiceVersion:db_column_type">VARCHAR</entry>
+</properties>

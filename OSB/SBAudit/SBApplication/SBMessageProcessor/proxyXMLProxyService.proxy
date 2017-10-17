@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ser:proxyServiceEntry xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:oper="http://xmlns.oracle.com/servicebus/proxy/operations" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env">
+    <ser:coreEntry>
+        <ser:binding type="abstract XML"/>
+        <oper:operations enabled="true"/>
+        <ser:invoke ref="SBMessageProcessor/pipelineXMLServicePipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
+        <ser:xqConfiguration>
+            <ser:snippetVersion>1.0</ser:snippetVersion>
+        </ser:xqConfiguration>
+    </ser:coreEntry>
+    <ser:endpointConfig>
+        <tran:provider-id>file</tran:provider-id>
+        <tran:inbound>true</tran:inbound>
+        <tran:URI>
+            <env:value>file:///tmp/SBFiles/Input</env:value>
+        </tran:URI>
+        <tran:inbound-properties/>
+        <tran:provider-specific xsi:type="file:FileEndPointConfiguration" xmlns:file="http://www.bea.com/wli/sb/transports/file">
+            <file:inbound-properties>
+                <file:fileMask>*.xml</file:fileMask>
+                <file:pollingInterval>15</file:pollingInterval>
+                <file:sortByArrival>false</file:sortByArrival>
+                <file:postAction>Archive</file:postAction>
+                <file:readLimit>10</file:readLimit>
+                <file:passByReference>false</file:passByReference>
+                <file:scanSubDirectories>false</file:scanSubDirectories>
+                <file:archiveDir>
+                    <env:value>/tmp/SBFiles/Archive</env:value>
+                </file:archiveDir>
+                <file:stageDir>
+                    <env:value>/tmp/SBFiles/Stage</env:value>
+                </file:stageDir>
+                <file:errorDir>
+                    <env:value>/tmp/SBFiles/Errors</env:value>
+                </file:errorDir>
+                <file:regex-file-mask>false</file:regex-file-mask>
+            </file:inbound-properties>
+            <file:request-encoding>utf-8</file:request-encoding>
+        </tran:provider-specific>
+    </ser:endpointConfig>
+</ser:proxyServiceEntry>

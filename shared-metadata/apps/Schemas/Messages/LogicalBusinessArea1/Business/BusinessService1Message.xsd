@@ -1,0 +1,19 @@
+<xs:schema
+	targetNamespace="http://www.singhpora.com/Schemas/Messages/LogicalBusinessArea1/Business/BusinessService1Message"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:bs1msg="http://www.singhpora.com/Schemas/Messages/LogicalBusinessArea1/Business/BusinessService1Message"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="doSomethingRequest" type="bs1msg:doSomethingRequestType"/>
+	<xs:complexType name="doSomethingRequestType">
+		<xs:sequence> 
+			<xs:element name="field1" type="xs:string"/>
+			<xs:element name="field2" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="doSomethingResponse" type="bs1msg:doSomethingResponseType"/>
+	<xs:complexType name="doSomethingResponseType">
+		<xs:sequence> 
+			<xs:element name="responseField1" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

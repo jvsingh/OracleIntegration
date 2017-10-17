@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.singhpora.samples.citrus</groupId>
+  <artifactId>SOAApplication</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <description>Super POM for SOAApplication</description>
+  <modules>
+    <module>SOAComposite</module>
+    <module>SOACompositeTests</module>
+  </modules>
+  <packaging>pom</packaging>
+
+ 
+</project>

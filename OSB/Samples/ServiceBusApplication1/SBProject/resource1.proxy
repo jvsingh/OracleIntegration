@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ser:proxyServiceEntry xmlns:ser="http://www.bea.com/wli/sb/services">
+    <ser:coreEntry>
+        <ser:binding type="native REST" xsi:type="con:NativeRestBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <oper:operations enabled="true" xmlns:oper="http://xmlns.oracle.com/servicebus/proxy/operations"/>
+        <ser:ws-policy>
+            <ser:binding-mode>no-policies</ser:binding-mode>
+        </ser:ws-policy>
+        <ser:invoke ref="SBProject/resource1-pipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <ser:xqConfiguration>
+            <ser:snippetVersion>1.0</ser:snippetVersion>
+        </ser:xqConfiguration>
+    </ser:coreEntry>
+    <ser:endpointConfig>
+        <tran:provider-id xmlns:tran="http://www.bea.com/wli/sb/transports">http</tran:provider-id>
+        <tran:inbound xmlns:tran="http://www.bea.com/wli/sb/transports">true</tran:inbound>
+        <tran:URI xmlns:tran="http://www.bea.com/wli/sb/transports">
+            <env:value xmlns:env="http://www.bea.com/wli/config/env">/SBProject/resource1</env:value>
+        </tran:URI>
+        <tran:inbound-properties xmlns:tran="http://www.bea.com/wli/sb/transports"/>
+        <tran:provider-specific xsi:type="http:HttpEndPointConfiguration" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <http:inbound-properties/>
+            <http:compression>
+                <http:compression-support>false</http:compression-support>
+            </http:compression>
+        </tran:provider-specific>
+    </ser:endpointConfig>
+</ser:proxyServiceEntry>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" version="Eclipse Persistence Services - 2.6.3.v20160526-8f41838">
+   <name>dbOSBAudit-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>dbOSBAudit.FlowtraceAudit</class>
+         <alias>dbo.FLOWTRACE_AUDIT</alias>
+         <primary-key>
+      
+            <!--field table="FLOWTRACE_AUDIT" name="AuditDateTime" xsi:type="column"/ -->
+            <field table="FLOWTRACE_AUDIT" name="AuditID" xsi:type="column"/>
+         
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="dbOSBAuditSelect" xsi:type="read-all-query">
+                  <reference-class>dbOSBAudit.FlowtraceAudit</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>Message_type</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="Message_type" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>AuditID</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="AuditID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>MessageReference</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="MessageReference" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <!--attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>AuditDateTime</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="AuditDateTime" xsi:type="column"/>
+               <attribute-classification>java.lang.Integer</attribute-classification>
+            </attribute-mapping -->
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>MessageDateTime</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="MessageDateTime" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>MessagePayload</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="MessagePayload" xsi:type="column"/>
+               <attribute-classification>java.lang.Object</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>ComponentName</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="ComponentName" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>ServiceVersion</attribute-name>
+               <field table="FLOWTRACE_AUDIT" name="ServiceVersion" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="dbo.FLOWTRACE_AUDIT"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.SQLServerPlatform</platform-class>
+      <connection-url></connection-url>
+   </login>
+</object-persistence>

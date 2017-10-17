@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/config">
+    <con:coreEntry>
+        <con:binding type="Native REST" xsi:type="con:NativeRestBindingType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="_onErrorHandler-N3f57fefe.6f3673.3.15e30c78469.N7ff9">
+        <con:pipeline name="_onErrorHandler-N3f57fefe.6f3673.3.15e30c78469.N7ff9" type="error">
+            <con:stage name="stage1">
+                <con:context/>
+                <con:actions>
+                    <con:replace varName="body" contents-only="true" xmlns:con="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con1:id>_ActionId-N3f57fefe.6f3673.6.15e30cae8be.N7ffe</con1:id>
+                        <con:expr>
+                            <con1:xqueryText>xs:string("{'error':'Custom Error Message '}")</con1:xqueryText>
+                        </con:expr>
+                    </con:replace>
+                    <con1:reply isError="false">
+                        <con1:id>_ActionId-N3f57fefe.6f3673.8.15e30cc2795.N7ff9</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline name="PipelinePairNode1_request" type="request"/>
+        <con:pipeline name="PipelinePairNode1_response" type="response">
+            <con:stage name="stage1">
+                <con:context/>
+                <con:actions>
+                    <con1:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-N3f57fefe.6f3673.4.15e30c80171.N8000</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">xs:string("{'response':'main response'}")</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="PipelinePairNode1">
+                <con:request>PipelinePairNode1_request</con:request>
+                <con:response>PipelinePairNode1_response</con:response>
+            </con:pipeline-node>
+        </con:flow>
+    </con:router>
+    <aler:alertRules xsi:nil="true" xmlns:aler="http://xmlns.oracle.com/servicebus/monitoring/alert" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+</con:pipelineEntry>

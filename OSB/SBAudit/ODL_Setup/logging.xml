@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<logging_configuration>
+ <log_handlers>
+  <log_handler name='console-handler' class='oracle.core.ojdl.logging.ConsoleHandler' level='WARNING:32' formatter='oracle.core.ojdl.weblogic.ConsoleFormatter'/>
+  <log_handler name='odl-handler' class='oracle.core.ojdl.logging.ODLHandlerFactory' filter='oracle.dfw.incident.IncidentDetectionLogFilter'>
+   <property name='path' value='${domain.home}/servers/${weblogic.Name}/logs/${weblogic.Name}-diagnostic.log'/>
+   <property name='maxFileSize' value='10485760'/>
+   <property name='maxLogSize' value='104857600'/>
+   <property name='encoding' value='UTF-8'/>
+   <property name='useThreadName' value='true'/>
+   <property name='supplementalAttributes' value='DSID,J2EE_APP.name,J2EE_MODULE.name,WEBSERVICE.name,WEBSERVICE_PORT.name,oracle.soa.tracking.FlowId,oracle.soa.tracking.InstanceId,oracle.soa.tracking.SCAEntityId,oracle.soa.tracking.FaultId,oracle.soa.tracking.RetryCount,composite_name'/>
+  </log_handler>
+  <log_handler name='wls-domain' class='oracle.core.ojdl.weblogic.DomainLogHandler' level='WARNING'/>
+  <log_handler name='owsm-message-handler' class='oracle.core.ojdl.logging.ODLHandlerFactory'>
+   <property name='path' value='${domain.home}/servers/${weblogic.Name}/logs/owsm/msglogging/diagnostic.log'/>
+   <property name='maxFileSize' value='10485760'/>
+   <property name='maxLogSize' value='104857600'/>
+   <property name='encoding' value='UTF-8'/>
+   <property name='supplementalAttributes' value='J2EE_APP.name,J2EE_MODULE.name,WEBSERVICE.name,WEBSERVICE_PORT.name'/>
+  </log_handler>
+  <log_handler name='em-log-handler' class='oracle.core.ojdl.logging.ODLHandlerFactory' level='NOTIFICATION:32' filter='oracle.dfw.incident.IncidentDetectionLogFilter'>
+   <property name='logreader:' value='off'/>
+   <property name='path' value='${domain.home}/servers/${weblogic.Name}/sysman/log/emoms.log'/>
+   <property name='format' value='ODL-Text'/>
+   <property name='useThreadName' value='true'/>
+   <property name='maxFileSize' value='5242880'/>
+   <property name='maxLogSize' value='52428800'/>
+   <property name='encoding' value='UTF-8'/>
+  </log_handler>
+  <log_handler name='em-trc-handler' class='oracle.core.ojdl.logging.ODLHandlerFactory' level='TRACE:32'>
+   <property name='path' value='${domain.home}/servers/${weblogic.Name}/sysman/log/emoms.trc'/>
+   <property name='format' value='ODL-Text'/>
+   <property name='useThreadName' value='true'/>
+   <property name='locale' value='en'/>
+   <property name='maxFileSize' value='5242880'/>
+   <property name='maxLogSize' value='52428800'/>
+   <property name='encoding' value='UTF-8'/>
+  </log_handler>
+  <log_handler name='quicktrace-handler' class='oracle.core.ojdl.logging.QuickTraceHandlerFactory' level='TRACE:32'>
+   <property name='mode' value='objRef'/>
+   <property name='bufferSize' value='5242880'/>
+   <property name='maxFieldLength' value='240'/>
+   <property name='useLoggingContext' value='false'/>
+   <property name='useThreadName' value='false'/>
+   <property name='useSourceClassandMethod' value='false'/>
+   <property name='encoding' value='UTF-8'/>
+  </log_handler>
+  <log_handler name='apps-clickhistory-handler' class='oracle.core.ojdl.logging.QuickTraceHandlerFactory'>
+   <property name='useLoggingContext' value='true'/>
+   <property name='encoding' value='UTF-8'/>
+   <property name='bufferSize' value='880640'/>
+   <property name='mergeStartEndMessage' value='false'/>
+   <property name='maxFileSize' value='10485760'/>
+   <property name='saveToDisk' value='true'/>
+   <property name='useThreadName' value='false'/>
+   <property name='supplementalAttributes' value='CH_CST,CH_CET,CH_VID,CH_WID,CH_CID_EC,CH_CNM,CH_FAM,CH_CMP,CH_RVD,CH_RNM,CH_RTY,CH_TYP,CH_EID,CH_PEI,CH_TTT,CH_RRT,CH_PRT,CH_RNT'/>
+   <property name='useSourceClassandMethod' value='false'/>
+   <property name='mode' value='CLK'/>
+   <property name='flushOnDump' value='false'/>
+   <property name='maxFieldLength' value='-1'/>
+   <property name='maxLogSize' value='52428800'/>
+   <property name='path' value='${domain.home}/servers/${weblogic.Name}/logs/${weblogic.Name}-clickhistory.log'/>
+  </log_handler>
+  <log_handler name='console-handler' class='oracle.core.ojdl.logging.ConsoleHandler' level='TRACE:32' formatter='oracle.core.ojdl.weblogic.ConsoleFormatter'/>
+  <log_handler name='SBMessageFlowtraceHandler' class='oracle.core.ojdl.logging.ODLHandlerFactory'  level='TRACE:32' filter='oracle.dfw.incident.IncidentDetectionLogFilter'>
+   <property name='path' value='B:/tmp/SBFlows/${weblogic.Name}-flowtrace.xml'/>
+   <property name='format' value='ODL-XML'/>
+   <property name='rotationFrequency' value='1'/>
+   <property name='retentionPeriod' value='day'/>
+   <property name='encoding' value='UTF-8'/>
+   <property name='useSourceClassAndMethod' value='TRACE:32'/>
+   <property name='supplementalAttributes' value='DSID,J2EE_APP.name,J2EE_MODULE.name,WEBSERVICE.name,WEBSERVICE_PORT.name,oracle.soa.tracking.FlowId,oracle.soa.tracking.InstanceId,oracle.soa.tracking.SCAEntityId,oracle.soa.tracking.FaultId,oracle.soa.tracking.RetryCount,composite_name'/>
+  </log_handler>
+ </log_handlers>
+ <loggers>
+  <logger name='' level='WARNING:1' useParentHandlers='true'>
+   <handler name='odl-handler'/>
+   <handler name='wls-domain'/>
+   <handler name='console-handler'/>
+  </logger>
+  <logger name='oracle' level='NOTIFICATION:1' useParentHandlers='true'/>
+  <logger name='oracle.adf' useParentHandlers='true'/>
+  <logger name='oracle.adf.desktopintegration' useParentHandlers='true'/>
+  <logger name='oracle.adf.faces' useParentHandlers='true'/>
+  <logger name='oracle.adf.controller' useParentHandlers='true'/>
+  <logger name='oracle.adfinternal' useParentHandlers='true'/>
+  <logger name='oracle.adfinternal.controller' useParentHandlers='true'/>
+  <logger name='oracle.jbo' useParentHandlers='true'/>
+  <logger name='oracle.adfdt' useParentHandlers='true'/>
+  <logger name='oracle.adfdtinternal' useParentHandlers='true'/>
+  <logger name='oracle.wsm' useParentHandlers='true'/>
+  <logger name='oracle.wsm.msg.logging' level='NOTIFICATION:1' useParentHandlers='false'>
+   <handler name='owsm-message-handler'/>
+   <handler name='wls-domain'/>
+  </logger>
+  <logger name='oracle.sysman' level='NOTIFICATION:32' useParentHandlers='false'>
+   <handler name='em-log-handler'/>
+   <handler name='em-trc-handler'/>
+  </logger>
+  <logger name='oracle.adf.model.log.AMPoolLifecycle' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.LobDomain' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.SQLBuilder' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.DataChangeEvent' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.RowFinder' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.JPXSettings' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.GlobalGroovyFunctions' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.ApplicationScript' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.FrameManagement' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.BusEvent' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.DefaultValueSerializer' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.HierBinding.KeyLookup' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.lov.MRU' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.SearchBinding' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.ViewCriteria' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.UserDef' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.adapteddc.share.SharedDataControl' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.customdata.programmatic.ViewObject' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.customdata.programmatic.Entity' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.Entity.ExprValueSupplier' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.tree.ParseNodeType' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.PropertiesLookup' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.ResourceLookup' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.ViewObject' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.XMLInteraction' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.Version' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.customizations.cpx' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.customizations.def' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.entity.ExprValueSupplier' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.log.SparseArrayException' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.Settings' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.dictionary' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.dictionary.Allocation' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.dictionary.Lookups' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.dictionary.Migration' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization.BusinessObjects' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization.Fields' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization.logic' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization.logic.Functions' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization.logic.Triggers' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization.logic.ValidationRules' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.customization.WebServices' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.logic.Functions' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.businesseditor.log.logic.Debugger' useParentHandlers='true'/>
+  <logger name='oracle.adfdebugdiagnostics' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.svc.log.ServiceImpl' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.svc.log.SchemaGen' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.svc.log.ServicePublisher' useParentHandlers='true'/>
+  <logger name='oracle.adf.model.svc.trace.ServiceExecution' useParentHandlers='true'/>
+  <logger name='oracle.adf.share.diagnostics.versions' level='FINEST' useParentHandlers='true'/>
+  <logger name='oracle.adf.share.mds.MDSTransManager' useParentHandlers='true'/>
+  <logger name='oracle.adf.share.mds.MDSTransManagerClientExceptionLog' useParentHandlers='true'/>
+  <logger name='oracle.adfdiagnostics' useParentHandlers='true'/>
+  <logger name='oracle.adfdiagnostics.security' useParentHandlers='true'/>
+  <logger name='oracle.clickhistory.EUM' level='NOTIFICATION:1' useParentHandlers='false'>
+   <handler name='apps-clickhistory-handler'/>
+  </logger>
+  <logger name='oracle.ods.virtualization' level='NOTIFICATION:1' useParentHandlers='true'/>
+  <logger name='oracle.ods.virtualization.accesslog' level='ERROR:1' useParentHandlers='true'/>
+  <logger name='oracle.sdp' useParentHandlers='true'/>
+  <logger name='oracle.sdpinternal' useParentHandlers='true'/>
+  <logger name='oracle.ucs' useParentHandlers='true'/>
+  <logger name='oracle.ucsinternal' useParentHandlers='true'/>
+  <logger name='oracle.webservices' level='WARNING' useParentHandlers='true'/>
+  <logger name='oracle.webservices.management' level='WARNING' useParentHandlers='true'/>
+  <logger name='oracle.j2ee.ws' level='WARNING' useParentHandlers='true'/>
+  <logger name='oracle.j2ee.ws.server' level='WARNING' useParentHandlers='true'/>
+  <logger name='oracle.fabric.common' level='WARNING' useParentHandlers='true'/>
+  <logger name='com.oracle.webservices' level='WARNING' useParentHandlers='true'/>
+  <logger name='com.sun.xml.ws' level='WARNING' useParentHandlers='true'/>
+
+  <logger name='oracle.osb.logging' useParentHandlers='true'>
+	  <handler name="SBMessageFlowtraceHandler" />
+  </logger>  
+  <logger name='oracle.osb.resources.service.service' useParentHandlers='true'>
+	  <handler name="SBMessageFlowtraceHandler" />
+  </logger>  
+  <logger name='oracle.osb.debug.transports'  level="WARNING" useParentHandlers='true'>
+	  <handler name="SBMessageFlowtraceHandler" />
+  </logger>  
+    
+  <!-- oracle.osb.resources.service.transportkernel -->
+  
+ </loggers>
+</logging_configuration>

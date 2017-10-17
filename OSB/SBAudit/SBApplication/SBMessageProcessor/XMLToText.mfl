@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<!DOCTYPE MessageFormat SYSTEM 'mfl.dtd'>
+<!--    Enter description of the message format here.    -->
+<MessageFormat name='Message' version='2.02'>
+    <StructFormat name='Header' delimOptional='y'>
+        <FieldFormat name='MessageNumber' type='String' delimRef='' delim='\\x00' delimOptional='n' codepage='windows-1252'/>
+        <FieldFormat name='MessageDateTime' type='String' delimRef='' delim='\\x00' delimOptional='n' codepage='windows-1252'/>
+        <FieldFormat name='Sender' type='String' delimRef='' delim='\\x00' delimOptional='n' codepage='windows-1252'/>
+    </StructFormat>
+    <StructFormat name='Body' delimOptional='y'>
+        <FieldFormat name='input' type='String' delimRef='' delim='\\x00' delimOptional='n' codepage='windows-1252'>
+            <TagField type='String' value='The original input was: '/>
+        </FieldFormat>
+    </StructFormat>
+</MessageFormat>

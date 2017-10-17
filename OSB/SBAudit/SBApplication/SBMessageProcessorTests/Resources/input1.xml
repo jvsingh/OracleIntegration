@@ -1,0 +1,10 @@
+<Message>
+    <Header>
+        <MessageNumber>1001</MessageNumber>
+        <MessageDateTime>20170917102101</MessageDateTime>
+        <Sender>TEST</Sender>
+    </Header>
+    <Body>
+        <input>Hello World</input>
+    </Body>
+</Message>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions
+     name="BPELProcess1"
+     targetNamespace="http://samples.singhpora.com/citrus/SOAApplication/SOAComposite/BPELProcess1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:client="http://samples.singhpora.com/citrus/SOAApplication/SOAComposite/BPELProcess1"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:documentation>
+        <abstractWSDL>http://jv-singhpora:7001/soa-infra/services/default/SOAComposite!1.0/WSDLs/MyService.wsdl</abstractWSDL>
+    </wsdl:documentation>
+    <plnk:partnerLinkType name="BPELProcess1">
+        <plnk:role name="BPELProcess1Provider" portType="client:BPELProcess1"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://samples.singhpora.com/citrus/SOAApplication/SOAComposite/BPELProcess1"
+                 schemaLocation="SOAComposite.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="BPELProcess1RequestMessage">
+        <wsdl:part name="payload" element="client:process"/>
+    </wsdl:message>
+    <wsdl:message name="BPELProcess1ResponseMessage">
+        <wsdl:part name="payload" element="client:processResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="BPELProcess1">
+        <wsdl:operation name="process">
+            <wsdl:input message="client:BPELProcess1RequestMessage"/>
+            <wsdl:output message="client:BPELProcess1ResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BPELProcess1Binding" type="client:BPELProcess1">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="process">
+            <soap:operation style="document" soapAction="process"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="bpelprocess1_client_ep">
+        <wsdl:port name="BPELProcess1_pt" binding="client:BPELProcess1Binding">
+            <soap:address location="http://jv-singhpora:7001/soa-infra/services/default/SOAComposite/bpelprocess1_client_ep"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

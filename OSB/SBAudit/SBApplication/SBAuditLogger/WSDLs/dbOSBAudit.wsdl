@@ -1,0 +1,38 @@
+<wsdl:definitions
+     name="dbOSBAudit"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SBApplication/Project1/dbOSBAudit"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SBApplication/Project1/dbOSBAudit"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbOSBAudit"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="dbOSBAudit_plt" >
+    <plt:role name="dbOSBAudit_role" >
+      <plt:portType name="tns:dbOSBAudit_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbOSBAudit" schemaLocation="../Schemas/dbOSBAudit_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbOSBAuditSelect_inputParameters">
+        <wsdl:part name="dbOSBAuditSelect_inputParameters" element="top:dbOSBAuditSelectInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="FlowtraceAuditCollection_msg">
+        <wsdl:part name="FlowtraceAuditCollection" element="top:FlowtraceAuditCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbOSBAudit_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:FlowtraceAuditCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:FlowtraceAuditCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="dbOSBAuditSelect">
+            <wsdl:input message="tns:dbOSBAuditSelect_inputParameters"/>
+            <wsdl:output message="tns:FlowtraceAuditCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con5="http://www.bea.com/wli/sb/stages/alert/config">
+    <con:coreEntry>
+        <con:binding type="Any XML"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:flow>
+            <con:route-node name="RouteNode1">
+                <con:context/>
+                <con:actions>
+                    <con1:route>
+                        <con2:id>_ActionId-N3f57ffe1.N647fdbf1.0.15e90f400b6.N7f9d</con2:id>
+                        <con1:service ref="SBMessageProcessor/jmsTextBusinessService" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:outboundTransform>
+                            <con4:log>
+                                <con2:id>_ActionId-N53ebf5f3.N33a4b6da.0.15eed2f61e6.N7ffe</con2:id>
+                                <con4:logLevel>info</con4:logLevel>
+                                <con4:expr>
+                                    <con2:xqueryText><![CDATA[<FlowTraceItem>
+    <ServiceVersion>{$serviceVersion}</ServiceVersion>
+    <Context>{$serviceContext}</Context>
+    <Data>{$body}</Data>
+</FlowTraceItem>]]></con2:xqueryText>
+                                </con4:expr>
+                                <con4:message>FLOWTRACE_ENTRY:</con4:message>
+                            </con4:log>
+                            <con4:report>
+                                <con2:id>_ActionId-N3f57fff1.6fc7ddf0.0.15ef3f99630.N7fce</con2:id>
+                                <con4:expr>
+                                    <con2:xqueryText>$body</con2:xqueryText>
+                                </con4:expr>
+                                <con4:labels>
+                                    <con4:key>TEST_KEY</con4:key>
+                                    <con4:varName>body</con4:varName>
+                                    <con4:value>
+                                        <con2:xpathText>//MessageNumber[1]/text()</con2:xpathText>
+                                    </con4:value>
+                                </con4:labels>
+                            </con4:report>
+                            <con3:mflTransform>
+                                <con2:id>_ActionId-N3f57ffe1.N10f4a38d.0.15e9144a08d.N7ffb</con2:id>
+                                <con3:type>XML-To-nonXML</con3:type>
+                                <con3:sourceExpr>
+                                    <con2:xqueryText>$body/*</con2:xqueryText>
+                                </con3:sourceExpr>
+                                <con3:mfl-resource ref="SBMessageProcessor/XMLToText"/>
+                                <con3:assign-variable>text</con3:assign-variable>
+                            </con3:mflTransform>
+                            <con3:replace varName="body" contents-only="true">
+                                <con2:id>_ActionId-N3f57ffe1.N10f4a38d.0.15e9144a08d.N7ff8</con2:id>
+                                <con3:location>
+                                    <con2:xpathText>.</con2:xpathText>
+                                </con3:location>
+                                <con3:expr>
+                                    <con2:xqueryText>$text</con2:xqueryText>
+                                </con3:expr>
+                            </con3:replace>
+                        </con1:outboundTransform>
+                        <con1:responseTransform>
+                            <con4:log>
+                                <con2:id>_ActionId-N3f57fff1.6fc7ddf0.0.15ef3f99630.N7f99</con2:id>
+                                <con4:logLevel>error</con4:logLevel>
+                                <con4:expr>
+                                    <con2:xqueryText><![CDATA[<FlowTraceItem>
+    <ServiceVersion>1.1.1</ServiceVersion>
+    <Data>{$body}</Data>
+</FlowTraceItem>]]></con2:xqueryText>
+                                </con4:expr>
+                                <con4:message>RESPONSE FLOWTRACE_ENTRY:</con4:message>
+                            </con4:log>
+                            <con5:alert>
+                                <con2:id>_ActionId-N3f57fff1.6fc7ddf0.0.15ef3f99630.N7f96</con2:id>
+                                <con5:destination ref="SBMessageProcessor/TestAlertDestination"/>
+                                <con5:description>TEST_ALERT AUDIT_MESSAGE</con5:description>
+                                <con5:severity>normal</con5:severity>
+                                <con5:payload>
+                                    <con2:xqueryText>&lt;AuditData>{$body}&lt;/AuditData></con2:xqueryText>
+                                </con5:payload>
+                            </con5:alert>
+                        </con1:responseTransform>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
