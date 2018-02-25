@@ -16,8 +16,7 @@
                 <con:actions>
                     <con2:route>
                         <con3:id>_ActionId-N3f57ffe1.4cfbb017.0.15efd1965ca.N7e06</con3:id>
-                        <con2:service ref="SBAuditLogger/Adapters/dbOSBAudit_db" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con2:operation>insert</con2:operation>
+                        <con2:service ref="SBAuditLogger/kafkaEventPublisher" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con2:outboundTransform>
                             <con1:javaCallout varName="cleansedXML">
                                 <con3:id>_ActionId-N3f57ffe1.2e94641f.0.15f116f9f91.N7ffb</con3:id>
@@ -57,4 +56,5 @@
             </con:route-node>
         </con:flow>
     </con:router>
+    <aler:alertRules xsi:nil="true" xmlns:aler="http://xmlns.oracle.com/servicebus/monitoring/alert"/>
 </con:pipelineEntry>
