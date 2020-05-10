@@ -1,0 +1,29 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/soap/fetchData_REQUEST/types" name="fetchPaginatedData_ptt" adapter="soap" wsdlLocation="fetchData_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.soap.SoapConnectionFactory">
+      <property name="managedSecurity" value="true"/>
+      <property name="targetWSDLURL" value="%%OICFETCHPAGINATE_TRIGGER_targetWSDLURL"/>
+      <property name="security" value="ics/wss_username_or_jwt_token_service_policy"/>
+      <property name="applicationVersion" value="1_0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-activation portType="fetchPaginatedData_ptt" operation="fetchPaginatedData">
+    <activation-spec className="oracle.tip.adapter.cloud.CloudActivationSpec">
+      <property name="targetOperation" value="fetchPaginatedData"/>
+      <property name="operationPath" value="fetchPaginatedData"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="cacName" value="fetchData_REQUEST"/>
+      <property name="activationSpecClass" value="oracle.tip.adapter.cloud.CloudActivationSpec"/>
+      <property name="disableSoapActionValidation" value="No"/>
+      <property name="operationPath" value="fetchPaginatedData"/>
+      <property name="generateInboundCredentials" value="true"/>
+      <property name="targetOperation" value="fetchPaginatedData"/>
+      <property name="targetInvocationStyle" value="ONEWAY"/>
+      <property name="skipAttachmentProcessing" value="true"/>
+      <property name="activationRegenerateWSDL" value="true"/>
+      <property name="jcaTransportEnabled" value="true"/>
+      <property name="targetPortType" value="fetchPaginatedData_ptt"/>
+      <property name="dynamicInvokeEnabled" value="false"/>
+    </activation-spec>
+  </endpoint-activation>
+</adapter-config>

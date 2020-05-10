@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oracle-xsl-webmapper:StateInfo xmlns:oracle-xsl-webmapper="http://www.oracle.com/xsl/webmapper/state" version="1.1">
+   <oracle-xsl-webmapper:ErrorsCount>0</oracle-xsl-webmapper:ErrorsCount>
+   <oracle-xsl-webmapper:WarningsCount>0</oracle-xsl-webmapper:WarningsCount>
+   <oracle-xsl-webmapper:IsImported>false</oracle-xsl-webmapper:IsImported>
+   <oracle-xsl-webmapper:HasMappings>true</oracle-xsl-webmapper:HasMappings>
+   <oracle-xsl-webmapper:StateInfoIsStale>false</oracle-xsl-webmapper:StateInfoIsStale>
+   <oracle-xsl-webmapper:SourcesReferenced>
+      <element xmlns:ns0="http://singhpora.com/OIC/schemas/OICFetchPaginatedData">ns0:fetchPaginatedDataMessage</element>
+      <rpcStyle>false</rpcStyle>
+      <type>2</type>
+      <uriAbsoluteLocation>file:/u01/data/domains/oiclhr2I_domain/servers/oiclhr2I_server_2/storage/ics/tmp/WC/itg_2912154076744785599/resources/application_18/outbound_19/resourcegroup_20/fetchData_REQUEST.wsdl</uriAbsoluteLocation>
+      <primary>true</primary>
+   </oracle-xsl-webmapper:SourcesReferenced>
+   <oracle-xsl-webmapper:AllSources>
+      <element xmlns:ns1="http://singhpora.com/OIC/schemas/OICFetchPaginatedData">ns1:fetchPaginatedDataMessage</element>
+      <rpcStyle>false</rpcStyle>
+      <type>2</type>
+      <uriAbsoluteLocation>file:/u01/data/domains/oiclhr2I_domain/servers/oiclhr2I_server_2/storage/ics/tmp/WC/itg_2912154076744785599/resources/application_18/outbound_19/resourcegroup_20/fetchData_REQUEST.wsdl</uriAbsoluteLocation>
+      <primary>true</primary>
+   </oracle-xsl-webmapper:AllSources>
+</oracle-xsl-webmapper:StateInfo>

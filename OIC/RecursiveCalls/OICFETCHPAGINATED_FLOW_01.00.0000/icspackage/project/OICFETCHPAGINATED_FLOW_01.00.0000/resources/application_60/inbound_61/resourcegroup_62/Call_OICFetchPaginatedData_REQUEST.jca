@@ -1,0 +1,35 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/soap/Call_OICFetchPaginatedData_REQUEST/types" name="fetchPaginatedData_ptt_fetchData_REQUEST" adapter="soap" wsdlLocation="Call_OICFetchPaginatedData_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.soap.SoapConnectionFactory">
+      <property name="managedSecurity" value="true"/>
+      <property name="endpointURL" value="https://IPLACEHOLDER_OIC_INSTANCE.integration.ocp.oraclecloud.com:443/ic/ws/integration/v1/flows/soap/OICFETCHPAGINATED_FLOW/1.0/"/>
+      <property name="targetWSDLURL" value="%%OICFETCHPAGINATED_INVOKE_targetWSDLURL"/>
+      <property name="csfkey" value="7742a4c59b6ce063dbe2f8b1a40201518f5f869f76a08048a3abdf701afff8bc"/>
+      <property name="csfMap" value="oracle.wsm.security"/>
+      <property name="tlsVersion" value="TLSv1.2"/>
+      <property name="security" value="oracle/wss_username_token_over_ssl_client_policy"/>
+      <property name="applicationVersion" value="1_0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="fetchPaginatedData_ptt_fetchData_REQUEST" operation="fetchPaginatedData">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="fetchPaginatedData"/>
+      <property name="operationPath" value="fetchPaginatedData"/>
+      <property name="interactionSpecClass" value="oracle.tip.adapter.cloud.CloudInteractionSpec"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="endpointWSDLURL" value="Call_OICFetchPaginatedData_REQUEST.wsdl"/>
+      <property name="cacName" value="Call_OICFetchPaginatedData_REQUEST"/>
+      <property name="inboundAsyncEnabled" value="false"/>
+      <property name="enableMTOMProcessing" value="false"/>
+      <property name="targetPort" value="fetchPaginatedData_ptt_fetchData_REQUEST_pt"/>
+      <property name="targetService" value="OICFetchPaginatedData"/>
+      <property name="actualOperationPath" value="fetchPaginatedData"/>
+      <property name="targetInvocationStyle" value="ONEWAY"/>
+      <property name="skipAttachmentProcessing" value="true"/>
+      <property name="enforceResponseSizeRestriction" value="true"/>
+      <property name="activationRegenerateWSDL" value="true"/>
+      <property name="jcaTransportEnabled" value="true"/>
+      <property name="dynamicInvokeEnabled" value="true"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

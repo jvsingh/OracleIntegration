@@ -1,0 +1,29 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions name="OICFetchPaginatedData" targetNamespace="http://singhpora.com/OIC/OICFetchPaginatedData"
+                  xmlns:tns="http://singhpora.com/OIC/OICFetchPaginatedData"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:ofpd="http://singhpora.com/OIC/schemas/OICFetchPaginatedData">
+  <wsdl:types>
+    <xsd:schema xmlns="http://singhpora.com/OIC/schemas/OICFetchPaginatedData" elementFormDefault="qualified"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                targetNamespace="http://singhpora.com/OIC/schemas/OICFetchPaginatedData"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
+                nxsd:encoding="UTF-8" nxsd:version="DTD">
+      <xsd:element name="fetchPaginatedDataMessage" type="fetchPaginatedDataType"/>
+      <xsd:complexType name="fetchPaginatedDataType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="pageNumber" type="xsd:int"/>
+          <xsd:element minOccurs="1" name="reference" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="fetchPaginatedDataMessage">
+    <wsdl:part name="payload" element="ofpd:fetchPaginatedDataMessage"/>
+  </wsdl:message>
+  <wsdl:portType name="fetchPaginatedData_ptt">
+    <wsdl:operation name="fetchPaginatedData">
+      <wsdl:input message="tns:fetchPaginatedDataMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
