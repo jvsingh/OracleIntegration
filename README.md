@@ -2,10 +2,11 @@
 More in the associated blog posts on http://weblog.singhpora.com
 ## Oracle Integration Cloud
 ## Oracle SOA
-## Oracle Service Bus 
+## Oracle Service Bus
 
+--------------------
 ### Sample: Recursive calls in Oracle Integration Cloud Flows (Scenario: Paginated API for large Data Sets)
-https://weblog.singhpora.com/2020/05/recursive-calls-in-oracle-integration.html
+https://weblog.singhpora.com/2020/05/recursive-paginated-calls-in-oracle-integration-cloud.html
 
 Location: OIC/Recursive
 
