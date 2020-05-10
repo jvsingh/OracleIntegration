@@ -5,13 +5,11 @@ More in the associated blog posts on http://weblog.singhpora.com
 ## Oracle SOA
 ## Oracle Service Bus 
 
-### Recursive calls in Oracle Integration Cloud Flows (Scenario: Paginated API for large Data Sets)
+### Sample: Recursive calls in Oracle Integration Cloud Flows (Scenario: Paginated API for large Data Sets)
 https://weblog.singhpora.com/2020/05/recursive-calls-in-oracle-integration.html
 
 
-###A very simple, mavenised Oracle SOA 12c Composite with an associated, CI-ready citrus test harness.
-#*******Author: Jang Vijay  Singh
-
+### Sample: A very simple, mavenised Oracle SOA 12c Composite with an associated, CI-ready citrus test harness.
 http://weblog.singhpora.com/2016/10/ws-security-enabling-passworddigest.html
 http://weblog.singhpora.com/2016/09/test-driven-soa-citrus-for-powerful-soa.html
 
