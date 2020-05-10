@@ -1,4 +1,3 @@
-####################################################
 # Sample applications using  Oracle Integration technologies
 More in the associated blog posts on http://weblog.singhpora.com
 ## Oracle Integration Cloud
@@ -8,7 +7,9 @@ More in the associated blog posts on http://weblog.singhpora.com
 ### Sample: Recursive calls in Oracle Integration Cloud Flows (Scenario: Paginated API for large Data Sets)
 https://weblog.singhpora.com/2020/05/recursive-calls-in-oracle-integration.html
 
+Location: OIC/Recursive
 
+--------------------
 ### Sample: A very simple, mavenised Oracle SOA 12c Composite with an associated, CI-ready citrus test harness.
 http://weblog.singhpora.com/2016/10/ws-security-enabling-passworddigest.html
 http://weblog.singhpora.com/2016/09/test-driven-soa-citrus-for-powerful-soa.html
